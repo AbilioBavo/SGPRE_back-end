@@ -2,13 +2,16 @@ package com.bavo.SGPRE_backend.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,6 +28,9 @@ public class Order implements Serializable {
 	private Address address;
 	@ManyToOne
 	private User user;
+
+	@OneToMany(mappedBy = "id.order")
+	private Set<OrderItem> orderItens = new HashSet<>();
 
 	public Order() {
 	}
@@ -63,6 +69,10 @@ public class Order implements Serializable {
 
 	public User getUser() {
 		return user;
+	}
+
+	public Set<OrderItem> getOrderItens() {
+		return orderItens;
 	}
 
 	public void setUser(User user) {
