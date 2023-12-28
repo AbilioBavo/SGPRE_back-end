@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -27,6 +28,7 @@ public class Order implements Serializable {
 	@ManyToOne
 	private Address address;
 	@ManyToOne
+	@JoinColumn(name="client_id")
 	private User user;
 
 	@OneToMany(mappedBy = "id.order")

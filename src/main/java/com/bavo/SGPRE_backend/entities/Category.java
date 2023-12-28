@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,7 +23,7 @@ public class Category implements Serializable {
 	private Long id;
 	private String name;
 
-	@OneToMany(mappedBy = "category", orphanRemoval = true)
+	@OneToMany(mappedBy = "category", orphanRemoval = true, fetch = FetchType.EAGER)
 	private Set<Item> itens = new HashSet<>();
 
 	public Category() {
