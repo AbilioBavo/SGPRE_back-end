@@ -49,6 +49,8 @@ import com.bavo.SGPRE_backend.repositories.UserRepository;
 			Category cat1 = new Category(null, "Electronics");
 			Category cat2 = new Category(null, "Books");
 			Category cat3 = new Category(null, "Computers");
+
+			Category cat4 = new Category(null, "CKd");
 			
 			Item p1 = new Item(null, "Nokia C3", "Nulla eu imperdiet purus. Maecenas ante.", null, 7000.0, "", null, cat3);
 			Item p2 = new Item(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", null, 2190.0, "", null, cat3);
